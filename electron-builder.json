@@ -1,0 +1,30 @@
+
+{
+  "appId": "com.storygraph.app",
+  "productName": "Story Graph",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*",
+    "package.json"
+  ],
+  "mac": {
+    "category": "public.app-category.video",
+    "target": ["dmg", "zip"]
+  },
+  "win": {
+    "target": "portable"
+  },
+  "linux": {
+    "target": ["AppImage"]
+  },
+  "extraResources": [
+    {
+      "from": "assets",
+      "to": "assets",
+      "filter": ["**/*"]
+    }
+  ]
+}

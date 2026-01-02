@@ -1,0 +1,8 @@
+{
+  "name": "Story Graph",
+  "description": "A specialized NLE for narrative film using fractal node topology and narrative physics.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
