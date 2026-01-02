@@ -8,10 +8,13 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "noEmit": false
   },
   "include": [
-    "main.ts",
+    "main.ts"
+  ],
+  "exclude": [
     "preload.js"
   ]
 }

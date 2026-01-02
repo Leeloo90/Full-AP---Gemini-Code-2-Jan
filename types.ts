@@ -18,6 +18,9 @@ export interface MediaAsset {
   resolution: string;
   filePath: string;
   mediaType: 'video' | 'audio';
+  scene?: string; // Added for CSV parsing
+  take?: string;  // Added for CSV parsing
+  transcript?: TranscriptWord[]; // Added for SRT parsing
 }
 
 export interface TranscriptWord {
@@ -70,6 +73,7 @@ export interface IElectronAPI {
   getAssetUrl: (filePath: string) => Promise<string>;
   selectDirectory: () => Promise<string | null>;
   listFiles: (dirPath: string) => Promise<string[]>;
+  readFile: (filePath: string) => Promise<string>;
   pathJoin: (...args: string[]) => Promise<string>;
 }
 

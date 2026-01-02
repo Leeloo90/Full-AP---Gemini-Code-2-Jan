@@ -1,7 +1,7 @@
-
 {
   "name": "story-graph",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist-electron/main.js",
   "description": "Specialized NLE for narrative film using fractal node topology.",
   "author": "Story Graph Team",
@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && npm run build-electron",
-    "build-electron": "tsc -p tsconfig.electron.json",
-    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "build-electron": "tsc -p tsconfig.electron.json && cp preload.js dist-electron/",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:3000 && VITE_DEV_SERVER_URL=http://localhost:3000 electron .\"",
     "package": "npm run build && electron-builder"
   },
   "build": {
